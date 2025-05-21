@@ -49,5 +49,8 @@ FROM debian:bookworm-slim
   COPY --from=builder /opt/src/pgloader/build/bin/pgloader /usr/local/bin
 
   ADD conf/freetds.conf /etc/freetds/freetds.conf
+  ADD run.sh /opt/src/pgloader/run.sh
 
   LABEL maintainer="Dimitri Fontaine <dim@tapoueh.org>"
+
+  CMD /opt/src/pgloader/run.sh
