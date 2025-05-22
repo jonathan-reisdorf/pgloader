@@ -24,7 +24,7 @@ FROM debian:bookworm-slim as builder
 
   COPY ./ /opt/src/pgloader
 
-ARG DYNSIZE=16384
+ARG DYNSIZE=30000
 
   RUN mkdir -p /opt/src/pgloader/build/bin \
       && cd /opt/src/pgloader \
